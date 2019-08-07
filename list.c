@@ -9,6 +9,7 @@ struct list_node {
 
 static LIST_HEAD(list_header);
 
+// Print the values of all nodes connected to the linked list.
 static void print(void) {
   struct list_node *node;
   if (!list_empty(&list_header)) {
@@ -19,6 +20,8 @@ static void print(void) {
   printf("NULL\n");
 }
 
+// Allocate a node with the given value,
+// and insert it into the linked list.
 static void insert(int val) {
   struct list_node *node;
   node = (struct list_node *)malloc(sizeof(struct list_node));
@@ -26,6 +29,8 @@ static void insert(int val) {
   list_add(&node->list, &list_header);
 }
 
+// Search for a node with the given value,
+// and delete it from the linked list.
 static void del(int val) {
   struct list_node *node, *tmp;
   if (!list_empty(&list_header)) {
